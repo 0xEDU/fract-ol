@@ -6,7 +6,7 @@
 /*   By: edu <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 19:54:48 by edu               #+#    #+#             */
-/*   Updated: 2023/03/18 20:37:15 by edu              ###   ########.fr       */
+/*   Updated: 2023/03/18 20:43:00 by edu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,4 @@ void	mlx_image_to_window(t_fractol *fractol, int x, int y)
 		fractol->mlx.window,
 		fractol->img.img,
 		x, y);
-	mlx_destroy_image(fractol->mlx.mlx, fractol->img.img);
 }
