@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   mlx_image_to_window.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edu <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/11 13:50:59 by edu               #+#    #+#             */
-/*   Updated: 2023/03/18 20:40:17 by edu              ###   ########.fr       */
+/*   Created: 2023/03/18 19:54:48 by edu               #+#    #+#             */
+/*   Updated: 2023/03/18 20:37:15 by edu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 #include <mlx.h>
 
-int	main(void)
+/* mlx_put_image_to_window(void *mlx_ptr, void *win_ptr, void *img_ptr, int x, int y) */
+void	mlx_image_to_window(t_fractol *fractol, int x, int y)
 {
-	t_fractol	fractol;
-
-	mlx_open_window(&fractol.mlx);
-	mlx_create_image(&fractol);
-	mlx_image_to_window(&fractol, 0, 0);
-	mlx_loop_window(&fractol.mlx);
-	return (0);
+	mlx_put_image_to_window(
+		fractol->mlx.mlx,
+		fractol->mlx.window,
+		fractol->img.img,
+		x, y);
+	mlx_destroy_image(fractol->mlx.mlx, fractol->img.img);
 }

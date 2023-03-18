@@ -11,6 +11,7 @@ MLX_SRCS = mlx_open_window.c \
 		   mlx_click_press_events.c \
 		   mlx_key_press_events.c \
 		   mlx_create_image.c \
+		   mlx_image_to_window.c \
 		   mlx_pixel_draw.c
 
 

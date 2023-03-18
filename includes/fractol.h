@@ -6,7 +6,7 @@
 /*   By: edu <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 13:51:27 by edu               #+#    #+#             */
-/*   Updated: 2023/03/12 16:24:09 by edu              ###   ########.fr       */
+/*   Updated: 2023/03/18 20:07:39 by edu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ typedef struct s_fractol {
 }		t_fractol;
 
 /* MLX-related functions */
+void	mlx_image_to_window(t_fractol *fractol, int x, int y);
 void	mlx_open_window(t_mlx *mlx);
 void	mlx_loop_window(t_mlx *mlx);
 void	mlx_close_window(t_mlx *mlx);
