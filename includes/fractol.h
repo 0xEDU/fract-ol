@@ -6,14 +6,14 @@
 /*   By: edu <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 13:51:27 by edu               #+#    #+#             */
-/*   Updated: 2023/03/18 20:07:39 by edu              ###   ########.fr       */
+/*   Updated: 2023/03/19 18:08:17 by edu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
-# define WIDTH 800
-# define HEIGHT 600
+# define WIDTH 1000.00
+# define HEIGHT 1000.00
 # include <math.h>
 # include <mlx.h>
 # include <stdlib.h>
@@ -46,12 +46,28 @@ typedef struct s_image {
 typedef struct s_fractol {
 	t_mlx	mlx;
 	t_image	img;
+	float	max_im;
+	float	min_im;
+	float	max_re;
+	float	min_re;
+	int		color;
+	int		max_iter;
+	int		args;
+	double	arg_re;
+	double	arg_im;
 }		t_fractol;
+
+/* Events */
+double	map_re(t_fractol *fractol, int x);
+double	map_im(t_fractol *fractol, int y);
+int		mouse(int x, int y, t_fractol *f);
+int		mouse_zoom(int key, int x, int y, t_fractol *f);
+int		render_image(t_fractol *fractol);
 
 /* MLX-related functions */
 void	mlx_image_to_window(t_fractol *fractol, int x, int y);
 void	mlx_open_window(t_mlx *mlx);
-void	mlx_loop_window(t_mlx *mlx);
+void	mlx_loop_window(t_fractol *fractol);
 void	mlx_close_window(t_mlx *mlx);
 int		mlx_key_press_events(int key_code, t_mlx *mlx);
 int		mlx_click_press_events(t_mlx *mlx);

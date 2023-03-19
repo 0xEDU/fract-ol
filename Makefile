@@ -4,7 +4,9 @@ PATH_SRCS = ./sources/
 PATH_MLX_SRCS = ./sources/mlx/
 PATH_OBJS = ./objects/
 
-SRCS = main.c
+SRCS = main.c \
+	   mouse_events.c
+
 MLX_SRCS = mlx_open_window.c \
 		   mlx_loop_window.c \
 		   mlx_close_window.c \
