@@ -6,7 +6,7 @@
 /*   By: edu <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 13:51:27 by edu               #+#    #+#             */
-/*   Updated: 2023/03/19 18:08:17 by edu              ###   ########.fr       */
+/*   Updated: 2023/03/19 19:34:01 by edu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # define HEIGHT 1000.00
 # include <math.h>
 # include <mlx.h>
+# include <X11/keysym.h>
 # include <stdlib.h>
 # include "../libft/includes/libft.h"
 # include "../libft/includes/ft_printf.h"
@@ -57,6 +58,8 @@ typedef struct s_fractol {
 	double	arg_im;
 }		t_fractol;
 
+void	init_mandelbrot(t_fractol *fractol);
+int		handle_input(int key, t_fractol *f);
 /* Events */
 double	map_re(t_fractol *fractol, int x);
 double	map_im(t_fractol *fractol, int y);
@@ -68,7 +71,7 @@ int		render_image(t_fractol *fractol);
 void	mlx_image_to_window(t_fractol *fractol, int x, int y);
 void	mlx_open_window(t_mlx *mlx);
 void	mlx_loop_window(t_fractol *fractol);
-void	mlx_close_window(t_mlx *mlx);
+void	mlx_close_window(t_fractol *fractol);
 int		mlx_key_press_events(int key_code, t_mlx *mlx);
 int		mlx_click_press_events(t_mlx *mlx);
 void	mlx_pixel_draw(t_image *image, int x, int y, int color);

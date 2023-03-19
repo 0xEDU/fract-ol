@@ -6,7 +6,7 @@
 /*   By: edu <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 13:50:59 by edu               #+#    #+#             */
-/*   Updated: 2023/03/19 17:43:20 by edu              ###   ########.fr       */
+/*   Updated: 2023/03/19 18:30:27 by edu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ void	init_mandelbrot(t_fractol *fractol)
 	fractol->max_im =
 		(fractol->max_re - fractol->min_re) * HEIGHT / WIDTH + fractol->min_im;
 	fractol->max_iter = 100;
-	fractol->color = 265;
+	fractol->color = 130;
 }
 
 int	render_image(t_fractol *fractol)
